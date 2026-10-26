@@ -19,7 +19,18 @@ Ctx  42%      84k/200k  /compact to free 60k   5h  23%   reset in 2h 14m   7d  6
    git clone https://github.com/raphaelmollon/claude-session-hud.git
    ```
 
-2. Déclarer le dossier dans `~/.claude/settings.json` (chemin absolu vers le clone) :
+2. Déclarer le dossier dans les réglages de Claude Code, avec le script de votre plateforme, lancé depuis le clone :
+
+   | Plateforme | Commande |
+   | --- | --- |
+   | Windows (PowerShell) | `powershell -ExecutionPolicy Bypass -File install.ps1` |
+   | macOS, Linux, Git Bash, WSL | `sh install.sh` |
+
+   Le script ajoute le chemin du clone à `CLAUDE_CODE_PLUGIN_DIRS`, dans le bloc `env` de `settings.json` (dans `CLAUDE_CONFIG_DIR` s'il est défini, sinon `~/.claude`). Les autres mods déjà déclarés sont conservés, relancer le script ne change rien, et une copie du fichier d'origine est gardée dans `settings.json.bak-session-hud`. `install.sh` a besoin de Python 3 ou de Node.js.
+
+   Pour désinstaller : `install.ps1 -Uninstall` ou `sh install.sh --uninstall`.
+
+   Sans script, ajoutez vous-même le chemin absolu du clone :
 
    ```json
    {
@@ -28,6 +39,8 @@ Ctx  42%      84k/200k  /compact to free 60k   5h  23%   reset in 2h 14m   7d  6
      }
    }
    ```
+
+   Pour plusieurs mods, séparez les chemins par `;` sous Windows et par `:` ailleurs.
 
 3. Relancer Claude Code.
 
