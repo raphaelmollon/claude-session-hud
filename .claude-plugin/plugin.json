@@ -1,0 +1,6 @@
+{
+  "name": "session-hud",
+  "version": "0.1.0",
+  "description": "Bandeau permanent : contexte de la session, gain d'un /compact, limites 5 h et hebdo, modèle, effort, abonnement, version, répertoire et état git.",
+  "types": "./types/index.d.ts"
+}
