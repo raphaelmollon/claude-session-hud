@@ -49,3 +49,7 @@ Pour mettre à jour : `git pull` dans le clone, puis relancer Claude Code.
 ## Développement
 
 Les définitions de types de `.claude-plugin/types/` sont générées par Claude Code et ne sont pas versionnées. Les tests sont dans `tests/session-hud.test.ts`.
+
+## Licence
+
+[MIT](LICENSE)
